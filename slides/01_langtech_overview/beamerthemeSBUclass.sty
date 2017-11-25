@@ -1,0 +1,154 @@
+% Copyright 2007 by Till Tantau
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+\ProvidesPackageRCS $Header: /Users/joseph/Documents/LaTeX/beamer/base/themes/theme/beamerthemeSBUclass.sty,v d02a7cf4d8ae 2010/06/17 09:11:41 rivanvx $
+
+
+\mode<presentation>
+
+\useoutertheme{default}
+\useinnertheme{rectangles}
+\usecolortheme{orchid}
+% \usecolortheme{whale}
+
+\usefonttheme[onlysmall]{structurebold}
+\usefonttheme[onlymath]{serif}
+\setbeamerfont{block title}{size={}}
+
+\setbeamertemplate{itemize items}[default]
+\beamertemplatenavigationsymbolsempty
+
+% empty footline except page number in bottom right
+\setbeamerfont{footline}{size=\footnotesize}
+\newcommand{\numberedfootline}{%
+    \setbeamertemplate{footline}{\color{SteelBlue4!95!black}\hfill\insertframenumber\hspace{0.5em}\smallskip}
+}
+\numberedfootline
+
+\setbeamertemplate{headline}{}
+
+% Title page: custom
+\defbeamertemplate*{title page}{customized}[1][]
+{
+  \vbox{}
+  \vfill
+  \begingroup
+    \centering
+    \begin{beamercolorbox}[sep=8pt,center,#1]{title}
+      \usebeamerfont{title}%
+      \usebeamercolor[fg]{title}%
+      \inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vskip1em\par
+    \begin{beamercolorbox}[sep=8pt,center,#1]{author}
+      \usebeamercolor{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}\vskip0.5em
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \endgroup
+  \vfill
+  % I couldn't figure out how to remove the header just for the title page;
+  % so we cover it with a white tikz rectangle
+  \begin{tikzpicture}[remember picture, overlay]
+      \fill[white] (current page.north west) rectangle ($(current page.north east)-(0,4em)$);
+  \end{tikzpicture}
+}
+
+
+%%%%%%%%%%%%
+%  colors  %
+%%%%%%%%%%%%
+
+\setbeamercolor*{structure}{fg=SteelBlue4!90!black}
+\setbeamercolor*{title}{fg=white,bg=structure}
+\setbeamercolor*{subtitle}{fg=white,bg=structure}
+\setbeamercolor*{author}{fg=structure}
+\setbeamercolor*{frametitle}{fg=white,bg=structure}
+\setbeamercolor*{section in head/foot}{fg=white,bg=structure.fg!90}
+\setbeamercolor*{footlinecolor}{fg=structure,bg=red}
+\setbeamercolor*{block title}{fg=white,bg=DodgerBlue4}
+\setbeamercolor*{alerted text}{fg=Red3}
+\setbeamercolor*{example text}{fg=SeaGreen4}
+\setbeamercolor*{course text}{fg=MediumOrchid4!60!black}
+\setbeamercolor*{code text}{fg=Orange1!80!black}
+
+% frame title
+\setbeamercolor*{palette primary}{use=section in head/foot,fg=section in head/foot.bg!90!black,bg=section in head/foot.fg}
+% transition between section header and frame title
+\setbeamercolor*{palette secondary}{use=structure,fg=white,bg=white}
+% unknown
+\setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=structure.fg!75!black}
+% section head
+\setbeamercolor*{palette quaternary}{fg=white,bg=structure.fg}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  misc presentation settings  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamercovered{transparent=30}
+\hypersetup{pdfstartview={Fit}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%  other misc settings  %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mode
+<all>
+
+% do not increase gb4e counter with slide transitions
+\resetcounteronoverlays{exx}
+
+% new block environments 
+\newenvironment<>{codeblock}[1]{%
+        \setbeamercolor{block title}{use=code text, bg=code text.fg}%
+        \setbeamercolor{local structure}{parent=code text}%
+        \begin{block}{#1}}%
+        {\end{block}}
+
+\newenvironment<>{courseblock}[1]{%
+        \setbeamercolor{block title}{use=course text, bg=course text.fg}%
+        \setbeamercolor{local structure}{parent=code text}%
+        \begin{block}{#1}}%
+        {\end{block}}
+
+\newenvironment<>{remark}[1][\unskip]{%
+    \setbeamercolor{block title}{fg=white,bg=orange!85!yellow}%
+    \ifstrequal{#1}{\unskip}{%
+        \begin{block}{Remark}}%
+        {\begin{block}{Remark (#1)}}}%
+    {\end{block}}
+
+\newcommand{\unnumbered}[1]{
+    \addtocounter{framenumber}{-1}
+    \setbeamertemplate{footline}{}
+    #1
+    \numberedfootline
+} 
+
+\newcommand{\highlight}[1]{\textbf{\alert{#1}}}
+
+\newcommand{\tsb}[1]{\ensuremath{_\text{#1}}}
+\newcommand{\citecolor}[1]{{\color{gray!85}{#1}}}
+\newcommand{\colored}[2]{{\color{#1}#2}}
+\colorlet{header}{RoyalBlue}
+\newcommand{\header}[1]{\textbf{\color{header}#1}}
+\newcommand{\subpoint}[1]{{\small\color{LightSteelBlue4}#1}}

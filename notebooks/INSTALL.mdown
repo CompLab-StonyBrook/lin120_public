@@ -1,0 +1,91 @@
+# Installing Python 3 and Jupyter Notebooks
+
+In this course you will learn to write simple programs in the language Python (version 3, to be precise, which is different from the still fairly common version 2). 
+As such, you need to have access to a computer with Python 3.
+You will also need a way to load Jupyter notebooks, which are similar to an interactive textbook where you can write, modify and run Python code directly in your web browser.
+
+There are two ways to get everything set up for this class:
+
+- **Recommended:**
+  Download and install [Anaconda](https://www.continuum.io/downloads).
+  Make sure you pick the version with Python 3.6, not the one with Python 2.7.
+
+- If you are a Stony Brook student with no access to your own computer or cannot get Anaconda to install, you can use Stony Brook's [Virtual SINC](https://it.stonybrook.edu/services/virtual-sinc-site) site.
+  Virtual SINC is available on every computer lab on campus, and can also be used off-campus.
+  For [detailed instructions, follow this link](https://it.stonybrook.edu/help/kb/connecting-to-the-virtual-sinc-site-on-windows-or-mac).
+
+- Linux users can install Jupyter from their distro's repositories.
+
+For a step-by-step guide on how to install Anaconda and start Jupyter, see the guides and linked videos below.
+
+## Windows
+
+### 32bit or 64bit?
+
+Before you even start installing Anaconda, you need to know if your version of Windows is 32-bit or 64-bit.
+Odds are it is the latter, but let's check to be sure.
+The instructions vary depending on whether you are running Windows 7, 8, or 10, but the following should work across all three:
+
+1. Open the start menu and search for system.
+1. Click on the System entry.
+1. This should open a window with all kind of technical information.
+   Keep an eye out for something like "64-bit Operating System".
+
+Here is a [video for Windows 7](../screencasts/win/system.mp4).
+If you are still struggling, a more detailed guide is available on [How-to Geek](https://www.howtogeek.com/howto/21726/how-do-i-know-if-im-running-32-bit-or-64-bit-windows-answers/).
+
+### Installing Anaconda
+
+1. Go to the [Anaconda website](https://www.anaconda.com/download/).
+1. Among the 3 operating systems, pick Windows.
+1. Between the different version of Anaconda, pick the one for Python 3.
+   The big green download button is for the 64-bit version, if you have a 32-bit OS click on the much smaller download link below the green button.
+1. Start the download.
+1. Once the setup file has been downloaded, run it.
+1. You can leave all settings on their default values.
+1. Once the installation finishes, open the Start Menu and go to Anaconda3 (64-bit).
+   Start Anaconda Navigator and launch Jupyter from there.
+1. A new tab will open in your browser.
+   This means that the notebook server has been successfully started.
+   There might also be a black terminal window.
+   You can ignore this --- closing the window will stop the server, though, so keep the terminal open as long as you're still reading a notebook.
+
+You can also check out the videos for how to [install](../screencasts/win/anaconda_install.mp4) and [launch](../screencasts/win/anaconda_install.mp4) Anaconda.
+
+Continue with the next guide to learn how to load a notebook.
+
+### How to load a Jupyter notebook
+
+Loading a Jupyter notebook file is easy.
+
+1. Look at the tab that opened in your browser when you started Jupyter notebook.
+   You should see the folders and files in your user directory.
+1. Save the notebook file (.ipynb) you want to open in your user directory.
+1. In the Jupyter tab in your browser, navigate to where you saved the notebook file and open it by clicking on it.
+
+Here is [a video](../screencasts/win/jupyter_open.mp4) where I download the sample notebook file above to the Downloads folder.
+I then go back to the tab that was started by Jupyter, click on the Downloads folder, and then on the notebook file inside of it.
+
+Once you're done with a notebook, you can close the tab in the browser and any black terminal window that may have popped up when you started Jupyter.
+
+## OS X
+
+Installation on Macs is very similar to the Windows procedure:
+
+1. Go to the [Anaconda website](https://www.anaconda.com/download/).
+1. Download the 64-bit graphical installer for Python 3 and run it.
+1. You can keep the default settings.
+1. Once the installation is complete, you can start the Jupyter notebook server as follows: Open Anaconda Navigator, and launch Jupyter.
+A new tab should open in your browser that says Home. It should show all folders and files in your user directory. Any notebook files in this folder can be started by clicking on them.
+
+## Virtual SINC
+
+1. Go to the [Virtual SINC site](https://it.stonybrook.edu/services/virtual-sinc-site) in your browser, and log in with your Net ID.
+   In order to start the virtual desktop, you need the Citrix receiver installed.
+   Stony Brook has guides for how to do this on [Windows and Mac](https://it.stonybrook.edu/help/kb/connecting-to-the-virtual-sinc-site-on-windows-or-mac) as well as [Android](https://it.stonybrook.edu/help/kb/connecting-to-the-virtual-sinc-site-on-an-android-tablet) and [iOS](https://it.stonybrook.edu/help/kb/connecting-to-the-virtual-sinc-site-on-an-apple-ipad).
+1. Once the virtual desktop has loaded, go to the Start Menu, click on *Programming & Development*, then *Anaconda 3 (64-bit)*, and then on *Jupyter*.
+1. At this point, everything works the same as for Windows.
+
+**Warning:**
+When using the Virtual SINC site, all notebooks should be saved in the folder [My SBfiles](https://it.stonybrook.edu/services/mysbfiles).
+Files saved anywhere else may be deleted between sessions, so you run the risk of losing all your work unless you save it in *My SBfiles*.
