@@ -1,0 +1,16 @@
+\ProvidesPackage{mycommands}
+
+\definecolor{codebg}{rgb}{0.95,0.95,0.95}
+\newminted{python}{linenos,mathescape,gobble=4,fontsize=\footnotesize,bgcolor=codebg,samepage=false}
+\newmintedfile{python}{linenos,mathescape,fontsize=\footnotesize,bgcolor=codebg,samepage=false}
+
+\newcommand{\Strikeout}[3]{\only<#1>{#3}\only<#2>{\st{#3}}}
+\newcommand{\yes}{\checkmark}
+\newcommand{\no}{\ensuremath{\times}}
+
+\newenvironment<>{followup}[1][\unskip]{%
+    \setbeamercolor{block title}{fg=white,bg=purple!85!blue}%
+    \ifstrequal{#1}{\unskip}{%
+        \begin{block}{Learning More}}%
+        {\begin{block}{Learning More (#1)}}}%
+    {\end{block}}
