@@ -1,5 +1,8 @@
 .ipynb_checkpoints/
 assessments/
 **/.ipynb_checkpoints
+**/quizpool
+**/DUE_DATE.txt
+**/*.ipynb.sage*
 quizzes/
 readings/
